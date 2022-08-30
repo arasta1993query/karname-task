@@ -1,13 +1,17 @@
 import Header from "./components/app/Header.jsx";
+import Questions from "./pages/Questions.jsx";
 
 
 function App() {
 
-  return (
-    <div className="text-3xl">
-      <Header />
-    </div>
-  )
+    return (
+        <>
+            <Header/>
+            <div className="container mx-auto pt-8">
+                <Questions/>
+            </div>
+        </>
+    )
 }
 
 export default App
