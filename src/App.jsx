@@ -6,9 +6,18 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {useEffect} from "react";
+import {fetchUserById} from "./stores/feed/users.js";
 
 
 function App() {
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchUserById(1))
+    })
 
     return (
         <>
