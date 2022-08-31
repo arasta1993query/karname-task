@@ -32,10 +32,12 @@ export const createPost = (data) => {
     })
 }
 
-export const getComments = () => {
+export const getComments = (params) => {
+    console.log(params , 'params')
     return service.request({
         method: "get",
         url: `/comments`,
+        params
     })
 }
 
@@ -47,11 +49,11 @@ export const createComment = (data) => {
     })
 }
 
-export const updateComment = ({id , params}) => {
+export const updateComment = ({id , data}) => {
     return service.request({
         method: "put",
         url: `/comments/${id}`,
-        params
+        data
     })
 }
 

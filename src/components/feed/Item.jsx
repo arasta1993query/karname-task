@@ -13,7 +13,7 @@ function Item(props) {
         <Box>
             <BoxHeader>
                 <div className="flex items-center">
-                    <img src={users.find(user => user.id === props.post.author_id)?.image_url} alt="" className="w-[32px] h-[32px] object-cover rounded-lg"/>
+                    <img src={users.find(user => +user.id === +props.post.author_id)?.image_url} alt="" className="w-[32px] h-[32px] object-cover object-top rounded-lg"/>
                     <h3 className="text-base font-bold mr-4">{props.post.title}</h3>
                 </div>
                 <div className="flex text-xs text-[#777777]">
@@ -32,11 +32,15 @@ function Item(props) {
             <div id="item-body" className="p-4">
                 <p className="mb-6 text-sm">{props.post.body}</p>
                 <div className="flex justify-end">
-                    <Link to={'details/' + props.post.id}>
-                        <Button link>
-                            مشاهده جزییات
-                        </Button>
-                    </Link>
+                    {
+                            props.detail ?
+                            <img src={props.post.image_url} alt=""/> :
+                            <Link to={'details/' + props.post.id}>
+                                <Button link>
+                                    مشاهده جزییات
+                                </Button>
+                            </Link>
+                    }
                 </div>
             </div>
         </Box>

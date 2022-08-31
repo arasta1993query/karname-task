@@ -8,9 +8,10 @@ const initialState = {
 
 export const fetchComments = createAsyncThunk(
     'fetchComments',
-    async (thunkAPI) => {
+    async (params) => {
+        console.log(params, 2)
         try {
-            const response = await getComments()
+            const response = await getComments(params)
             return response.data
         } catch (e) {
             console.log(e)
@@ -20,9 +21,9 @@ export const fetchComments = createAsyncThunk(
 
 export const fetchUpdateComment = createAsyncThunk(
     'fetchUpdateComment',
-    async (id , params) => {
+    async ({id , data}) => {
         try {
-            const response = await updateComment({id, params})
+            const response = await updateComment({id, data})
             return {id, data: response.data}
         } catch (e) {
             console.log(e)

@@ -2,7 +2,6 @@ import Item from "../components/feed/Item.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {fetchPosts} from "../stores/feed/posts.js";
-import {fetchUsers} from "../stores/feed/users";
 
 
 function Questions() {
@@ -11,7 +10,6 @@ function Questions() {
 
     useEffect(() => {
         dispatch(fetchPosts())
-        dispatch(fetchUsers())
     },[])
     return (
         <div>

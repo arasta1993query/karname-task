@@ -8,7 +8,7 @@ const initialState = {
 
 export const fetchPosts = createAsyncThunk(
     'fetchPosts',
-    async (thunkAPI) => {
+    async () => {
         try {
             const response = await getPosts()
             return response.data

@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {useEffect} from "react";
-import {fetchUserById} from "./stores/feed/users.js";
+import {fetchUserById, fetchUsers} from "./stores/feed/users.js";
 
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
 
     useEffect(() => {
         dispatch(fetchUserById(1))
+        dispatch(fetchUsers())
     })
 
     return (
