@@ -14,8 +14,8 @@ function Modal() {
     const {currentUser} = useSelector(state => state.users)
     const [subject, setSubject] = useState('')
     const [body, setBody] = useState('')
-    let SDebounce = false;
-    let BDebounce = false;
+    let SDebounce = true;
+    let BDebounce = true;
 
     const creatQuestion = () => {
         const data = {
@@ -32,26 +32,24 @@ function Modal() {
     }
     const handleSubject = (e) => {
         if (SDebounce) {
+            setTimeout(() => {
+                SDebounce = false;
+            }, 1000)
+            setSubject(e.target.value)
             return
         }
         SDebounce = true;
-        setSubject(e.target.value)
-
-        setTimeout(() => {
-            SDebounce = false;
-        }, 1000)
     }
 
     const handleBody = (e) => {
         if (BDebounce) {
+            setTimeout(() => {
+                BDebounce = false;
+            }, 1000)
+            setBody(e.target.value)
             return
         }
         BDebounce = true;
-        setBody(e.target.value)
-
-        setTimeout(() => {
-            BDebounce = false;
-        }, 1000)
     }
 
     const closeModal = (e) => {

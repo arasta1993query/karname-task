@@ -54,8 +54,8 @@ const commentsReducer = createReducer({...initialState},
                 console.log(state.comments , 'call')
             })
             .addCase(fetchUpdateComment.fulfilled, (state, action) => {
-              const index =  state.comments.findIndex(comment => comment.id  === action.payload.id)
-                  state.comments[index] = {...action.payload.data}
+                const index = state.comments.findIndex(comment => comment.id === action.payload.id)
+                state.comments[index] = {...action.payload.data}
             })
             .addCase(fetchCreateComment.fulfilled, (state, action) => {
                 state.comments.push(action.payload)

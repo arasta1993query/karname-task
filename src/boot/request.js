@@ -32,6 +32,14 @@ export const createPost = (data) => {
     })
 }
 
+export const updatePost = ({id, data}) => {
+    return service.request({
+        method: "put",
+        url: `/posts/${id}`,
+        data
+    })
+}
+
 export const getComments = (params) => {
     console.log(params , 'params')
     return service.request({

@@ -1,5 +1,5 @@
 import {createReducer, createAction, createAsyncThunk} from '@reduxjs/toolkit'
-import {createPost, getPost, getPosts} from "../../boot/request.js";
+import {createPost, getPost, getPosts, updatePost} from "../../boot/request.js";
 
 const initialState = {
     posts: [],
@@ -43,6 +43,19 @@ export const fetchCreatePost = createAsyncThunk(
     }
 )
 
+export const fetchUpdatePost = createAsyncThunk(
+    'fetchUpdatePost',
+    async (payload) => {
+        try {
+            const response = await updatePost(payload)
+            return payload
+        } catch (e) {
+            console.log(e)
+        }
+
+    }
+)
+
 // const hide = createAction('hide')
 
 const postsReducer = createReducer({...initialState},
@@ -57,6 +70,10 @@ const postsReducer = createReducer({...initialState},
             })
             .addCase(fetchCreatePost.fulfilled, (state, action) => {
                 state.posts.push(action.payload)
+            })
+            .addCase(fetchUpdatePost.fulfilled, (state, action) => {
+                const index = state.posts.findIndex(comment => comment.id === action.payload.id)
+                state.posts[index] = {...action.payload.data}
             })
     }
 )

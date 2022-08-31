@@ -49,8 +49,7 @@ function AnswerItem(props) {
             </BoxHeader>
             <div id="item-body" className="p-4">
                 <p className="mb-6 text-sm">
-                    سلام من میخوام یه authentication ساده تو react بسازم اما این error رو بهم میده. نمیدونم مشکل از
-                    کجاست. عکس خروجی console رو هم گذاشتم که ببینید دقیقا چه مشکلی وجود داره
+                    {props.comment.body}
                 </p>
                 <div className="flex justify-end">
                     <div onClick={() => {
