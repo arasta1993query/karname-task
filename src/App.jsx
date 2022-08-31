@@ -9,7 +9,7 @@ function App() {
     return (
         <>
             <Header/>
-            <div className="container mx-auto pt-8">
+            <div className="container mx-auto pt-8 pb-10">
                 <Questions/>
                 <Details />
             </div>

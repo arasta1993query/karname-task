@@ -6,7 +6,7 @@ function Button(props) {
     "flex items-center justify-center text-xs text-white bg-[#27AE60] py-2 px-5 cursor-pointer rounded-md"
 
     return (
-        <button className={style} onClick={(e) => props.onClick(e)}>
+        <button className={style} style={{width: props.width + 'px'}} onClick={(e) => props.onClick(e)}>
             {props.children}
         </button>
     )
