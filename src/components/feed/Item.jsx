@@ -2,15 +2,18 @@ import Comment from "../svgs/Comment.jsx";
 import BoxHeader from "../app/BoxHeader.jsx";
 import Box from "../app/Box.jsx";
 import Button from "../app/Button.jsx";
+import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 
-function Item() {
+function Item(props) {
+    const {users} = useSelector(state => state.users)
     return (
         <Box>
             <BoxHeader>
                 <div className="flex items-center">
-                    <img src="" alt="" className="w-[32px] h-[32px] rounded-lg"/>
-                    <h3 className="text-base font-bold mr-4">مشکل در Auth در React</h3>
+                    <img src={users.find(user => user.id === props.post.author_id).image_url} alt="" className="w-[32px] h-[32px] object-cover rounded-lg"/>
+                    <h3 className="text-base font-bold mr-4">{props.post.title}</h3>
                 </div>
                 <div className="flex text-xs text-[#777777]">
                     <div className="after:w-px after:h-full after:mx-3 after:bg-black/10 after:block flex">
@@ -21,18 +24,18 @@ function Item() {
                     </div>
                     <div className="flex items-center mr-7">
                         <Comment />
-                        <span className="mr-1">20</span>
+                        <span className="mr-1">{props.post.comments}</span>
                     </div>
                 </div>
             </BoxHeader>
             <div id="item-body" className="p-4">
-                <p className="mb-6 text-sm">
-                    سلام من میخوام یه authentication ساده تو react بسازم اما این error رو بهم میده. نمیدونم مشکل از کجاست. عکس خروجی console رو هم گذاشتم که ببینید دقیقا چه مشکلی وجود داره
-                </p>
+                <p className="mb-6 text-sm">{props.post.body}</p>
                 <div className="flex justify-end">
-                    <Button link>
-                        مشاهده جزییات
-                    </Button>
+                    <Link to={'details/' + props.post.id}>
+                        <Button link>
+                            مشاهده جزییات
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </Box>

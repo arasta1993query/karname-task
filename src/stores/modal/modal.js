@@ -5,8 +5,6 @@ const initialState = {
     data: null
 }
 
-
-
 const show = createAction('show')
 const hide = createAction('hide')
 
@@ -14,7 +12,6 @@ const modalReducer = createReducer({...initialState},
     (builder) => {
         builder
             .addCase(show, (state, action) => {
-                console.log('test2')
                 state.show = true;
                 state.data = action?.payload
             })
