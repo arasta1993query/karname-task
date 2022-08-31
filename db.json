@@ -1,0 +1,117 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "مشکل در Auth در React",
+      "author": "سپهر",
+      "author_id": 1,
+      "body": "سلام من میخوام یه authentication ساده تو react بسازم اما این error رو بهم میده. نمیدونم مشکل از کجاست. عکس خروجی console رو هم گذاشتم که ببینید دقیقا چه مشکلی وجود داره",
+      "created": "",
+      "image_url": "/3.png",
+      "comments": 4
+    },
+    {
+      "id": 2,
+      "title": "مشکل در gasg در vue",
+      "author": "گندم",
+      "author_id": 2,
+      "body": "سلام من میخوام یه authentication ساده تو react بسازم اما این error رو بهم میده. نمیدونم مشکل از کجاست. عکس خروجی console رو هم گذاشتم که ببینید دقیقا چه مشکلی وجود داره",
+      "created": "",
+      "image_url": "/3.png",
+      "comments": 2
+    },
+    {
+      "author": "گندم",
+      "author_id": 2,
+      "title": "test",
+      "body": "test tstet tetst ttet tste",
+      "created": 1661960259602,
+      "image_url": "/3.png",
+      "comments": 0,
+      "id": 3
+    },
+    {
+      "author": "گندم",
+      "author_id": 2,
+      "title": "test2 ",
+      "body": "alkhjdfljghlajsgdfjhgashjdgf jhagsd تاشلسیلیب",
+      "created": 1661960360311,
+      "image_url": "/3.png",
+      "comments": 0,
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1,
+      "author_id": 1,
+      "author": "سپهر",
+      "like": 6,
+      "dislike": 6,
+      "created": 1661960360311
+    },
+    {
+      "id": 2,
+      "body": "some comment",
+      "postId": 1,
+      "author_id": 1,
+      "author": "سپهر",
+      "like": 5,
+      "dislike": 5,
+      "created": 1661960360311
+    },
+    {
+      "id": 3,
+      "body": "some comment",
+      "postId": 1,
+      "author": "گندم",
+      "author_id": 2,
+      "like": 3,
+      "dislike": 3,
+      "created": 1661960360311
+    },
+    {
+      "id": 3,
+      "body": "some comment",
+      "postId": 3,
+      "author": "گندم",
+      "author_id": 2,
+      "like": 3,
+      "dislike": 3
+    },
+    {
+      "body": "test jkajhsvdKJDKl;jbvznbm",
+      "postId": 1,
+      "author": "سپهر",
+      "author_id": 1,
+      "like": 5,
+      "dislike": 4,
+      "created": 1661985292386,
+      "id": 4
+    },
+    {
+      "body": "yagsjdba تشسممشسدیتض تسد عهثپش تدطزظطزد تثمهید دطز",
+      "postId": 1,
+      "author": "سپهر",
+      "author_id": 1,
+      "like": 0,
+      "dislike": 0,
+      "created": 1661985726347,
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "سپهر",
+      "image_url": "/1.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "گندم",
+      "image_url": "/2.jpeg"
+    }
+  ]
+}
