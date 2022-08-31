@@ -2,3 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    html {
+        font-family: IRANYekan, system-ui, sans-serif;
+        direction: rtl;
+        background: #E5E5E5;
+    }
+    textarea {
+        resize: none;
+    }
+}
